@@ -97,7 +97,7 @@ class EtlExecutionRepository extends ServiceEntityRepository
             ->getArrayResult();
     }
 
-    public function getMaxWaitTime(\DateTime $startTime, \DateTime $endTime): int
+    public function getMaxWaitTime(\DateTime $startTime, \DateTime $endTime): float
     {
         $result = $this->createQueryBuilder('cm')
             ->select('MAX(cm.runTime) as waitTime')
@@ -106,10 +106,10 @@ class EtlExecutionRepository extends ServiceEntityRepository
             ->getQuery()
             ->getSingleResult();
 
-        return (isset($result['waitTime'])) ? $result['waitTime'] : 0;
+        return (isset($result['waitTime'])) ? (float) $result['waitTime'] : 0.0;
     }
 
-    public function getAvgWaitTime(\DateTime $startTime, \DateTime $endTime): int
+    public function getAvgWaitTime(\DateTime $startTime, \DateTime $endTime): float
     {
         $result = $this->createQueryBuilder('cm')
             ->select('AVG(cm.runTime) as waitTime')
@@ -118,7 +118,7 @@ class EtlExecutionRepository extends ServiceEntityRepository
             ->getQuery()
             ->getSingleResult();
 
-        return (isset($result['waitTime'])) ? $result['waitTime'] : 0;
+        return (isset($result['waitTime'])) ? (float) $result['waitTime'] : 0.0;
     }
 
     public function getOldExecutions(\DateTime $time): iterable

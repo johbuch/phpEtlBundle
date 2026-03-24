@@ -16,13 +16,13 @@ class TimeIntervalExtension extends AbstractExtension
         ];
     }
 
-    public function formatTime($time): string
+    public function formatTime(float $time): string
     {
 
         $time = abs($time);
-        $sec = str_pad($time % 60, 2, '0', STR_PAD_LEFT);
-        $min = str_pad(floor($time / 60), 2, '0', STR_PAD_LEFT);
-        $hour = str_pad(floor($time / 60 / 60), 1, '0');
+        $sec = str_pad((string) ($time % 60), 2, '0', STR_PAD_LEFT);
+        $min = str_pad((string) (floor($time / 60)), 2, '0', STR_PAD_LEFT);
+        $hour = str_pad((string) (floor($time / 60 / 60)), 1, '0');
 
         $formattedPieces = [];
         if ($time > (60*60)) {
