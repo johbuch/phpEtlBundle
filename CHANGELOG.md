@@ -1,3 +1,10 @@
+# 2.0.0
+
+- :star2: Support for php-etl 2 (**Breaking Change**)
+- :star2: - **NEW PARADIGM** - use php for configurations instead of yaml (**Breaking Change**)
+- :star2: Support Symfony 7 & 8 - Dropped support for Symfony 5 & 6 (**Breaking Change**)
+- :star2: Added support for php-etl merge operation
+
 # 1.1.0
 
 - :star2: Support for php-etl 1.2 new operations has been added. (Skipped 1.1)

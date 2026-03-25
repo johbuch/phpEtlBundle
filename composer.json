@@ -12,7 +12,7 @@
   ],
   "require": {
     "php": ">=8.2",
-    "oliverde8/php-etl": "^v1.2.0-alpha1|^v2.0.0-alpha1",
+    "oliverde8/php-etl": "^v1.2.0-alpha5|^v2.0.0-alpha5",
     "symfony/framework-bundle": "^7.0|^8.0",
     "symfony/messenger": "^7.0|^8.0",
     "ext-json": "*"
